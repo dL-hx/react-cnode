@@ -216,7 +216,7 @@ dayjs.locale('zh-cn')
   {/* 返回现在到当前实例的相对时间。 */}
   {dayjs(last_reply_at).fromNow()}
 ```
-![Alt text](image.png)
+![Alt text](src/static/img/image.png)
 
 
 ### 分页
@@ -257,7 +257,7 @@ export default function IndexPagination() {
     </div>
 }
 ```
-![Alt text](image1.png)
+![Alt text](src/static/img/image1.png)
 
 
 ### 详情
