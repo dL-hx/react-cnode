@@ -279,3 +279,56 @@ export default function FromNow(props){
 使用
 > `<FromNow date={create_at}/>`
 > `<FromNow date={last_reply_at}/>`
+
+
+
+### 评论列表组件
+```jsx
+import React from 'react'
+import {Avatar, Card, List, Comment} from "antd";
+import {UserOutlined} from "@ant-design/icons";
+import FromNow from "../../components/FromNow";
+import {Link} from "react-router-dom";
+
+export default function Replies(props) {
+    let {data=[], loading} = props
+    return <Card
+        title="评论列表"
+        loading={loading}
+        id='replies'
+    >
+        <List
+            dataSource={data}
+            renderItem={(itemData) => {
+                // console.log(itemData)
+                return <List.Item>
+                    <Comment
+                        author={<Link to={`/user/${itemData.author.loginname}`}>{itemData.author.loginname}</Link>}
+                        avatar={<Avatar
+                            icon={<UserOutlined/>}
+                            src={itemData.author.avatar_url}
+                            title={itemData.author.loginname}
+                        />}
+                        content={<div
+                            dangerouslySetInnerHTML={{
+                                __html: itemData.content
+                            }}
+                        />
+                        }
+                        datetime={<time>发布于: <FromNow data={itemData.create_at}/></time>}
+                    />
+                </List.Item>
+            }}
+            pagination={{
+                simple: true
+            }}
+        />
+    </Card>
+}
+```
+引用组件
++ `<Replies data={data.replies} loading={loading}/>`
+![Snipaste_2023-12-05_23-23-51.png](src%2Fstatic%2Fimg%2FSnipaste_2023-12-05_23-23-51.png)
+
+
+### 用户列表

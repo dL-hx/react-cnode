@@ -16,7 +16,7 @@ function Header() {
                 <div className='wrap'>
                     <Row>
                         <Col xs={6} sm={4} md={2}>
-                            <h1 className='logo'><Link to='/'>logo</Link></h1>
+                            <h1 className='logo'><Link to='/'>CNODE</Link></h1>
                         </Col>
                         <Col xs={18} sm={20} md={22}>
                             <Menu mode='horizontal' theme='dark' defaultSelectedKeys={[activeIndex + '']}>
