@@ -4,7 +4,9 @@
 import { createStore, combineReducers } from 'redux'
 import topics from './reducers/topics'
 import topic from './reducers/topic'
+import user from './reducers/user'
 export default createStore(combineReducers({
     topics,
-    topic
+    topic,
+    user
 }))

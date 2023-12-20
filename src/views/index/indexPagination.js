@@ -10,7 +10,7 @@ export default function IndexPagination() {
     let { tab = "all", page = 1 } = qs.parse(search.substr(1));
     return <div className="index-pagination">
         <Pagination
-            defaultCurrent={page}
+            current={page-0}
             defaultPageSize={20}
             total={1000}
             showSizeChanger={false}

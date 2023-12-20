@@ -331,4 +331,5 @@ export default function Replies(props) {
 ![Snipaste_2023-12-05_23-23-51.png](src%2Fstatic%2Fimg%2FSnipaste_2023-12-05_23-23-51.png)
 
 
-### 用户列表
+### 用户详情
+![Snipaste_2023-12-05_23-43-25.png](src%2Fstatic%2Fimg%2FSnipaste_2023-12-05_23-43-25.png)

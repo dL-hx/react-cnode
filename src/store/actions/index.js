@@ -1,8 +1,8 @@
 import axios from 'axios';
 import {useDispatch} from "react-redux";
-
 const http = axios.create({
-    baseURL: "https://cnodejs.org/api/v1"
+    // baseURL: "https://cnodejs.org/api/v1",
+    baseURL: "https://static2.cnodejs.org/api/v1"
 })
 
 // 获取主题列表数据
@@ -47,4 +47,23 @@ function useTopic() {
     }
 }
 
-export {useTopicsList, useTopic}
+
+// 获取用户详情
+// 返回一个高阶函数
+function useUser() {
+    const dispatch = useDispatch()
+    return function (loginname) {
+        dispatch({
+            type: 'user_loading',
+        })
+        http.get(`/user/${loginname}`)
+            .then(res => {
+                dispatch({// 存入state的数据
+                    type: 'user_loadover',
+                    data: res.data.data
+                })
+            })
+    }
+}
+
+export {useTopicsList, useTopic, useUser}

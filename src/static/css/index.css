@@ -63,6 +63,10 @@ img{
 #replies .ant-card-body{
     padding-top: 0;
 }
+
+.user_page .ant-card{
+    margin-top: 10px;
+}
 /* >=576px */
 @media all and (min-width:576px) {
     .wrap {

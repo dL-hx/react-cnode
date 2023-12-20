@@ -10,6 +10,7 @@ export default function Replies(props) {
         title="评论列表"
         loading={loading}
         id='replies'
+        type="inner"
     >
         <List
             dataSource={data}
